@@ -1,0 +1,99 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-decoration: none;
+}
+.sidebar{
+    position: fixed;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #042331;
+    transition: all 0.5s ease-in-out;
+}
+.sidebar header{
+    font-size: 22px;
+    line-height: 70px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #063146;
+    user-select: none;
+}
+.sidebar ul a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 60px;
+    color: #fff;
+    padding-left: 40px;
+    font-size: 18px;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid #000;
+    transition: 0.4s;
+}
+.sidebar ul a:hover{
+    padding-left: 50px;
+}
+.sidebar ul a i{
+    margin-right: 16px;
+}
+#check{
+    display: none;
+}
+label i{
+    position: absolute;
+    cursor: pointer;
+    background-color: #042331;
+    border-radius: 3px;
+}
+label #btn{
+    position: fixed;
+    left: 40px;
+    top: 25px;
+    font-size: 35px;
+    color: #fff;
+    padding: 6px 12px;
+    transition: all 0.5s ease-in-out;
+}
+label #cancel{
+    z-index: 1111;
+    left: -195px;
+    top: 17px;
+    font-size: 30px;
+    color: #0a5275;
+    padding: 4px 9px;
+    position: fixed;
+    transition: all 0.5s ease-in-out;
+}
+#check:checked ~ .sidebar{
+    left: 0px;
+}
+#check:checked ~ label #btn{
+    left: 250px;
+    opacity: 0;
+    pointer-events: none;
+}
+#check:checked ~ label #cancel{
+    left: 195px;
+}
+@media(max-width: 520px)
+{
+    .sidebar{
+        width: 200px;
+    }
+    label #btn{
+        left: 10px;
+    }
+    .sidebar ul a{
+        padding-left: 25px;
+    }
+    .sidebar ul a:hover{
+        padding-left: 35px;
+    }
+    #check:checked ~ label #cancel{
+        left: 150px;
+    }
+}
